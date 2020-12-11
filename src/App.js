@@ -1,16 +1,14 @@
 import React from "react";
 import NavBar from './Components/Navbar/NavBar'
+import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 
-let App = () =>{
+const App = () =>{
   return(
     <>
     <NavBar/>
+    <ItemListContainer gretting="Bienvenido!!"/>
     </>
   )
 }
 
-
-
-
-//Saca a "global" la variable APP, pero no "a" ni "b"
 export default App;

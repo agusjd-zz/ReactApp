@@ -1,10 +1,10 @@
 import React from 'react';
-import {FaShoppingCart} from 'react-icons/fa'
+import { FiShoppingCart } from "react-icons/fi";
 import './CartWidget.css'
 
 const CartWidget = () =>{
   return(
-      <FaShoppingCart className='iconCart'></FaShoppingCart>
+      <FiShoppingCart className='iconCart'></FiShoppingCart>
   )
     
 }

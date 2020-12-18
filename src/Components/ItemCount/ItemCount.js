@@ -4,9 +4,9 @@ import { IoMdAddCircleOutline } from "react-icons/io";
 import { IoIosRemoveCircleOutline } from "react-icons/io";
 
 
-const ItemCount = ()=>{
-    const initial = 1;
-    const stock = 10;
+const ItemCount = (props)=>{
+    const initial = props.initial;
+    const stock = props.stock;
 
     const[count,setCount] = React.useState(initial);
 
@@ -20,19 +20,20 @@ const ItemCount = ()=>{
         if (count > initial && count > 0){
             setCount(count-1);
         }
-        if (stock === 0){
-            <p>Nos qedamos sin stock</p>
-        } 
+    
     }
 
     return(
+        <>
+        <h2>Producto</h2>
         <div className = "countContainer">
-        <button><IoIosRemoveCircleOutline onClick = {countRemove}></IoIosRemoveCircleOutline></button>
+        <IoIosRemoveCircleOutline onClick = {countRemove}></IoIosRemoveCircleOutline>
             <p className="count">{count}</p>
-        <button><IoMdAddCircleOutline onClick ={countAdd}></IoMdAddCircleOutline></button>  
-            
-
+        <IoMdAddCircleOutline onClick ={countAdd}></IoMdAddCircleOutline>    
         </div>
+        <button>Agregar al carrito</button>
+        </>
+    
         
     )
  }

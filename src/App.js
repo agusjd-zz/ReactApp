@@ -8,8 +8,8 @@ const App = () =>{
   return(
     <>
     <NavBar/>
-    <ItemListContainer gretting="Bienvenido!!"/>
-    <ItemCount></ItemCount>
+    <ItemListContainer gretting="Bienvenido a la tienda!!"/>
+    <ItemCount stock="10" initial= "1"></ItemCount>
     </>
   )
 }

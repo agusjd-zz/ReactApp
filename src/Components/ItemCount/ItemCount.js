@@ -26,9 +26,9 @@ const ItemCount = (props)=>{
     return(
         <>
         <h2>Producto</h2>
-        <div className = "countContainer">
+        <div className = "d-flex count">
         <IoIosRemoveCircleOutline onClick = {countRemove}></IoIosRemoveCircleOutline>
-            <p className="count">{count}</p>
+            <p>{count}</p>
         <IoMdAddCircleOutline onClick ={countAdd}></IoMdAddCircleOutline>    
         </div>
         <button>Agregar al carrito</button>

@@ -11,7 +11,7 @@ const ItemCount = (props)=>{
     const[count,setCount] = React.useState(initial);
 
     const countAdd = () =>{
-        if (count < stock){
+        if (count){
             setCount(count+1);
         }
     }

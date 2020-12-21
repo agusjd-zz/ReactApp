@@ -11,13 +11,13 @@ const ItemCount = (props)=>{
     const[count,setCount] = React.useState(initial);
 
     const countAdd = () =>{
-        if (count){
+        if (count < stock){
             setCount(count+1);
         }
     }
 
     const countRemove = () =>{
-        if (count > initial && count > 0){
+        if (count > initial){
             setCount(count-1);
         }
     

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Products = [{
+export const Products = [{
     id : 0,
     title : "Miel",
     brand : "Finca Carolina",
@@ -54,4 +54,4 @@ const Products = [{
     price : "AR$250"
 }]
 
-export default Products
+export default Products;

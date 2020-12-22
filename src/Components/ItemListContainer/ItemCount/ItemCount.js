@@ -25,7 +25,6 @@ const ItemCount = (props)=>{
 
     return(
         <>
-        <h2>Producto</h2>
         <div className = "d-flex count">
         <IoIosRemoveCircleOutline onClick = {countRemove}></IoIosRemoveCircleOutline>
             <p>{count}</p>

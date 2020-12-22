@@ -8,7 +8,9 @@ const ItemListContainer = (props) =>{
             <h1>
                 {props.gretting}
             </h1>
+            <div className="d-flex row">
             <ItemList/>
+            </div>
         </div>
     )
 }

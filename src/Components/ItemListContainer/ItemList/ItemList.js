@@ -19,7 +19,7 @@ const ItemList = () =>{
         <>
             {item.map((item) => {
                 return(
-                    <div>
+                    <div className="col-xl-4 mb-4 mt-4">
                         <h2>{item.title}</h2>
                         <p>{item.brand}</p>
                         <p>{item.price}</p>

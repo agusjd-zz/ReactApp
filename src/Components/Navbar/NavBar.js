@@ -6,7 +6,7 @@ return(
 <nav className="navbar navbar-expand-sm bg-success navbar-dark">
 
   <a className="navbar-brand" href="#">Grusli</a>
-  
+  <div>
   <ul className="navbar-nav">
     <li className="nav-item">
       <a className="nav-link" href="#">Inicio</a>
@@ -18,6 +18,7 @@ return(
       <a className="nav-link" href="#">Contactanos</a>
     </li>
   </ul>
+  </div>
   <CartWidget/>
 </nav> 
 )

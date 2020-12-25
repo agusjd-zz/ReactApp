@@ -30,7 +30,7 @@ const ItemCount = (props)=>{
             <p>{count}</p>
         <IoMdAddCircleOutline onClick ={countAdd}></IoMdAddCircleOutline>    
         </div>
-        <button>Agregar al carrito</button>
+        <button className="btn btn-outline-success btn-sm">Agregar al carrito</button>
         </>
     
         

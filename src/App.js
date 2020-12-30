@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {BrowserRouter as Router, Switch, Route,Link} from "react-router-dom"
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import NavBar from './Components/Navbar/NavBar'
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 import ItemDetailsContainer from "./Components/ItemDetailsContainer/ItemDetailsContainer";
@@ -8,16 +8,13 @@ import ItemDetailsContainer from "./Components/ItemDetailsContainer/ItemDetailsC
 const App = () =>{
   return(
     <>
-    <NavBar/>
     <Router>
-      <Switch>
+    <NavBar/>
+    <Switch>   
       <Route path="/" exact>
         <ItemListContainer/>
       </Route>
-      <Route path="/category:id">
-      <ItemListContainer/>
-      </Route>
-      <Route path="/item:id">
+      <Route path="/ItemDetailContainer/:id">
         <ItemDetailsContainer/>
       </Route>
       </Switch>

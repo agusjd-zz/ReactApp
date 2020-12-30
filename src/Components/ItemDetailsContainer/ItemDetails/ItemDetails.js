@@ -1,40 +1,22 @@
-import React,{useEffect, useState} from 'react'
+import React from 'react'
 import ItemCount from '../../ItemCount/ItemCount'
-import {Products} from '../../ItemListContainer/Items/Items'
 
-const ItemDetails = () => {
-    const [item,setItem] = useState([]);
 
-    useEffect(()=>{
-        setTimeout(()=>{
-            const arrayDetails = fetch({})
-            arrayDetails.then(response =>{
-                return response.json({Products})
-            })
-            .then(response =>{
-                setItem(response[0])
-            })
-        },2000)
-    })
+const ItemDetails = ({title,brand,price,img}) => {
     return(
-        <div>
-            {item ? (
-            <div>
-                <div>
-                    <div>
-                    <ItemCount />
-                    </div>
+        <>
+            <div className="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-4 mt-4 ">
+                        <h2>{title}</h2>
+                        <img src={img} alt="Hola"></img>
+                        <p>{brand}</p>             
+                        <p>{price}</p>
+                        <ItemCount stock = {10} initial = {1}> </ItemCount>
                 </div>
-                <div>
-                    <h2>{item.title}</h2>
-                    <p>Precio: ${item.price}</p>
-                </div>
-            </div>
-            ) : (
-            <p>Testing...</p>
-            )}
-        </div>
-        )
+        </>
+    )
+
+
+    
 }
 
 export default ItemDetails

@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
-import ItemDetails from "./ItemDetails/ItemDetails"
+import ItemDetails from "../ItemDetails/ItemDetails"
 
 const products = new Promise((resolve,reject)=>{
 

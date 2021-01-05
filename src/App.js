@@ -14,9 +14,15 @@ const App = () =>{
       <Route path="/" exact>
         <ItemListContainer/>
       </Route>
-      <Route path="/ItemDetailContainer/:id">
+      <Route path="/Categoria/:id">
+        <ItemListContainer/>
+      </Route>
+      <Route path="/DetalleProducto/:id">
         <ItemDetailsContainer/>
       </Route>
+     
+      
+
       </Switch>
     </Router>
     </>

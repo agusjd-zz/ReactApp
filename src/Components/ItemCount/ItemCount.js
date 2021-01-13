@@ -30,6 +30,7 @@ const ItemCount = (props)=>{
         setQuantity(count);
         console.log(`Se agregaron ${count} elementos al carrito ${idProduct}`)
 
+
     }
 
     return(

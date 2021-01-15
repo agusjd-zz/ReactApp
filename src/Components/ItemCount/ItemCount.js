@@ -2,6 +2,7 @@ import React from 'react';
 import './ItemCount.css'; 
 import { IoMdAddCircleOutline } from "react-icons/io";
 import { IoIosRemoveCircleOutline } from "react-icons/io";
+
 import {NavLink} from 'react-router-dom';
 
 
@@ -12,6 +13,8 @@ const ItemCount = (props)=>{
 
     const[quantity,setQuantity] = React.useState();
     const[count,setCount] = React.useState(initial);
+
+
 
     const countAdd = () =>{
         if (count < stock){

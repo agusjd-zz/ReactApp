@@ -9,7 +9,10 @@ import Cart from './Components/Cart/Cart'
 const App = () =>{
   return(
     <>
+    
+    
     <Router>
+    
     <NavBar/>
     <Switch>   
       <Route path="/" exact>
@@ -24,9 +27,6 @@ const App = () =>{
       <Route path="/Carrito">
         <Cart/>
       </Route>
-     
-      
-
       </Switch>
     </Router>
     </>

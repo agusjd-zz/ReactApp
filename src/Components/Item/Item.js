@@ -1,5 +1,6 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
+import ItemCount from "../ItemCount/ItemCount"
 
 const Item = ({id,title,price,img,brand}) => {
     return (
@@ -10,6 +11,7 @@ const Item = ({id,title,price,img,brand}) => {
         </NavLink>
         <p>{brand}</p>             
         <p>AR${price}</p>
+        <ItemCount stock = {10} initial = {1} id ={id} price={price} title ={title} img={img}/>
     </div>
     )
 }

@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
 import CartContext from '../../Context/CartContext'
+import {NavLink} from 'react-router-dom'
 
 function Cart() {
     
@@ -29,7 +30,7 @@ function Cart() {
                         <p className="col-xl-2">Precio total</p>
                     </div> 
                     <div className="row" key={product.id}>
-                        <p>{product.img}</p>
+                        <img src={product.img}></img>
                         <p className="col-xl-2">{product.title}</p>
                         <p className="col-xl-2">{product.number}</p>
                         <p className="col-xl-2">AR${product.price}</p>
@@ -51,7 +52,9 @@ function Cart() {
             <p>${getGrandTotal()}</p>
             </div>
         </div>
-        <button>Volver</button>   
+        <NavLink to="/">
+        <button>Volver</button>
+        </NavLink>   
         <button onClick={clearCart}>Borrar todo</button>
         </div>
         </div>

@@ -13,6 +13,7 @@ const ItemCount = (props)=>{
     const price = props.price;
     const title = props.title;
     const img = props.img;
+    const [showing, setShowing] = React.useState(false);
 
     const {addProduct} = React.useContext(CartContext);
     const datos = {idProduct, stock, price, title,img} 
@@ -37,6 +38,7 @@ const ItemCount = (props)=>{
     
     const addToCart = () =>{
         setQuantity(count);
+        setShowing({ showing: !showing });
         console.log(`Se agregaron ${count} elementos al carrito ${idProduct}`)
         addProduct(datos, count);
 
@@ -50,7 +52,10 @@ const ItemCount = (props)=>{
             <p>{count}</p>
         <IoMdAddCircleOutline onClick ={countAdd}></IoMdAddCircleOutline>    
         </div>
-        <button className="btn btn-outline-success btn-sm" onClick={addToCart}>Agregar al carrito {count} productos</button>
+        { showing
+    ? <NavLink to="/Carrito"><button >Terminar Compra</button></NavLink>
+    : <button onClick={addToCart}>Agregar al Carrito</button>
+    }
 
         </>
     

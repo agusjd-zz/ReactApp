@@ -1,10 +1,7 @@
 import React,{useContext} from 'react'
 import ItemCount from '../ItemCount/ItemCount'
-import ProductContext from '../../Context/ProductContext'
-
 
 const ItemDetails = ({item}) => {
-    const product = useContext(ProductContext);
     
     return(
         <>

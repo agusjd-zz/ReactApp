@@ -2,7 +2,7 @@ import React, {createContext, useState, useEffect} from 'react';
 import { productDetails } from '../Components/Item/products';
 
 const ProductContext = createContext();
-
+console.log(productDetails)
 
 function ProductContextProvider({children}) {
     const [product, setProduct] = useState([]);

@@ -5,14 +5,15 @@ import NavBar from './Components/Navbar/NavBar'
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 import ItemDetailsContainer from "./Components/ItemDetailsContainer/ItemDetailsContainer";
 import Cart from './Components/Cart/Cart'
+import {ProductContextProvider} from './Context/ProductContext'
+import {CartContextProvider} from './Context/CartContext'
 
 const App = () =>{
   return(
-    <>
-    
-    
+    <>  
     <Router>
-    
+    <ProductContextProvider>
+    <CartContextProvider>
     <NavBar/>
     <Switch>   
       <Route path="/" exact>
@@ -28,6 +29,8 @@ const App = () =>{
         <Cart/>
       </Route>
       </Switch>
+      </CartContextProvider>
+      </ProductContextProvider>        
     </Router>
     </>
   )

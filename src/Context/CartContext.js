@@ -3,15 +3,41 @@ import React, {createContext, useState} from 'react';
 const CartContext = createContext();
 
 function CartContextProvider({children}){
-    const [quantity, setQuantity] = useState();
-    const [id, setId] = useState();
-    const [price, setPrice] = useState();
-    const [title, setTitle] = useState()
+    const [products, setProducts] = useState([]);
 
-    const datos = { quantity, id, price, title } 
+    const addProduct = (datos, number) => {
+    
+    const existing = products.find((p) => p.id === datos.id);
+
+    if (existing) {
+        existing.number += number;
+        } else {
+        setProducts([...products, { ...datos, number }]);    
+        }
+    };
+
+    const delProduct = (id) => {
+        products.splice(
+        products.findIndex((p) => p.id === id),
+        1
+        );
+        setProducts([...products]);
+    };
+
+    const clearCart = () => {
+        setProducts([]);
+    }
+
+    const productsCount = () => {
+        return products.reduce((total, p) => (total += p.number), 0);
+    };
+    
+    const getGrandTotal = () => {
+        return products.reduce((total , p) => (total += p.price * p.number), 0);
+    };
 
     return(
-        <CartContext.Provider value={{ quantity, setQuantity, id, setId, price, setPrice, title, setTitle, datos }}>
+        <CartContext.Provider value={{ products, addProduct, delProduct, clearCart, productsCount, getGrandTotal  }}>
             {children}
         </CartContext.Provider>
     )

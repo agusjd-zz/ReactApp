@@ -2,14 +2,20 @@ import React from 'react';
 import './ItemCount.css'; 
 import { IoMdAddCircleOutline } from "react-icons/io";
 import { IoIosRemoveCircleOutline } from "react-icons/io";
-
 import {NavLink} from 'react-router-dom';
+import CartContext from '../../Context/CartContext'
 
 
 const ItemCount = (props)=>{
     const initial = props.initial;
     const stock = props.stock;
     const idProduct = props.id;
+    const price = props.price;
+    const title = props.title;
+    const img = props.img;
+
+    const {addProduct} = React.useContext(CartContext);
+    const datos = {idProduct, stock, price, title,img} 
 
     const[quantity,setQuantity] = React.useState();
     const[count,setCount] = React.useState(initial);
@@ -32,6 +38,7 @@ const ItemCount = (props)=>{
     const addToCart = () =>{
         setQuantity(count);
         console.log(`Se agregaron ${count} elementos al carrito ${idProduct}`)
+        addProduct(datos, count);
 
 
     }
@@ -43,9 +50,7 @@ const ItemCount = (props)=>{
             <p>{count}</p>
         <IoMdAddCircleOutline onClick ={countAdd}></IoMdAddCircleOutline>    
         </div>
-        <NavLink to="/Carrito"> 
-        <button className="btn btn-outline-success btn-sm" onClick={addToCart}>Agregar al carrito</button>
-        </NavLink>
+        <button className="btn btn-outline-success btn-sm" onClick={addToCart}>Agregar al carrito {count} productos</button>
 
         </>
     

@@ -7,7 +7,8 @@ import CartContext from '../../Context/CartContext'
 
 
 const ItemCount = (props)=>{
-    const initial = props.initial;
+    const initial = 1;
+    const[count,setCount] = React.useState(initial);
     const stock = props.stock;
     const idProduct = props.id;
     const price = props.price;
@@ -16,10 +17,9 @@ const ItemCount = (props)=>{
     const [showing, setShowing] = React.useState(false);
 
     const {addProduct} = React.useContext(CartContext);
-    const datos = {idProduct, stock, price, title,img} 
+    const datos = {idProduct, price, title,img} 
 
-    const[quantity,setQuantity] = React.useState();
-    const[count,setCount] = React.useState(initial);
+    
 
 
 
@@ -37,7 +37,6 @@ const ItemCount = (props)=>{
     }
     
     const addToCart = () =>{
-        setQuantity(count);
         setShowing({ showing: !showing });
         console.log(`Se agregaron ${count} elementos al carrito ${idProduct}`)
         addProduct(datos, count);
@@ -54,7 +53,7 @@ const ItemCount = (props)=>{
         </div>
         { showing
     ? <NavLink to="/Carrito"><button >Terminar Compra</button></NavLink>
-    : <button onClick={addToCart}>Agregar al Carrito</button>
+    : <button onClick={addToCart}>Agregar al Carrito {count}</button>
     }
 
         </>

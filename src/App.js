@@ -9,6 +9,8 @@ import {ProductContextProvider} from './Context/ProductContext'
 import {CartContextProvider} from './Context/CartContext'
 
 const App = () =>{
+
+  
   return(
     <>  
     <Router>

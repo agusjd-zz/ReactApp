@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import NavBar from './Components/Navbar/NavBar'
@@ -7,10 +7,10 @@ import ItemDetailsContainer from "./Components/ItemDetailsContainer/ItemDetailsC
 import Cart from './Components/Cart/Cart'
 import {ProductContextProvider} from './Context/ProductContext'
 import {CartContextProvider} from './Context/CartContext'
+import getFirestore from "./firebase"
 
-const App = () =>{
+const App = () =>{  
 
-  
   return(
     <>  
     <Router>

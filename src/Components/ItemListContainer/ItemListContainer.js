@@ -78,6 +78,24 @@ const ItemListContainer = () =>{
     const [items,setItems] = useState([])
     const {id} = useParams()
 
+    // useEffect(()=>{
+
+    //     const db = getFirestore();
+    //     const itemsCollection = db.collection("Items")
+    //     const query = itemsCollection.get()
+  
+    //     query
+    //     .then((res)=>{
+    //       res.docs.forEach(doc => {
+    //         console.log(doc.data())
+            
+    //       });
+    //     })
+    //     .catch((err)=>{
+    //       console.log(err)
+    //     })
+    //   })
+
     useEffect(()=>{
 
         let promise = new Promise((resolve,reject)=>{

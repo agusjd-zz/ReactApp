@@ -2,35 +2,50 @@ import React,{useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import ItemDetails from "../ItemDetails/ItemDetails"
 import ProductContext from "../../Context/ProductContext"
-import {getFirestore} from "../../firebase";
+// import {getFirestore} from "../../firebase";
 
 
 
 const ItemDetailsContainer = () => {
-    // const product = React.useContext(ProductContext)
+    const product = React.useContext(ProductContext)
     const [item,setItem] = useState()
     const {id} = useParams() 
     
-    useEffect(()=>{
-        
-    })
-
-
-
-
     // useEffect(()=>{
-    //     let promise = new Promise((resolve,reject)=>{
-    //         setTimeout(()=>{
-    //             resolve(product)
-    //         },1000)
-    //     })
 
-    //     promise.then(resolve=>{
-    //         if(id){
-    //             setItem(resolve.filter(item=>item.id == id)[0])
-    //         }
+    //     const db = getFirestore();
+    //     const itemsCollection = db.collection("Items")
+    //     const query = itemsCollection.get()
+  
+    //     query
+    //     .then((res)=>{
+    //       res.docs.forEach(doc => {
+    //         console.log(doc.data())
+            
+    //       });
     //     })
-    // },[id])
+    //     .catch((err)=>{
+    //       console.log(err)
+    //     })
+    //   })
+
+
+
+
+
+    useEffect(()=>{
+        let promise = new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve(product)
+            },1000)
+        })
+
+        promise.then(resolve=>{
+            if(id){
+                setItem(resolve.filter(item=>item.id == id)[0])
+            }
+        })
+    },[id])
 
     return(
         <div>

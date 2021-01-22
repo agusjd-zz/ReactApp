@@ -7,7 +7,8 @@ import ItemDetailsContainer from "./Components/ItemDetailsContainer/ItemDetailsC
 import Cart from './Components/Cart/Cart'
 import {ProductContextProvider} from './Context/ProductContext'
 import {CartContextProvider} from './Context/CartContext'
-import getFirestore from "./firebase"
+import Inicio from "./Components/Inicio/Inicio";
+
 
 const App = () =>{  
 
@@ -17,8 +18,11 @@ const App = () =>{
     <ProductContextProvider>
     <CartContextProvider>
     <NavBar/>
-    <Switch>   
+    <Switch>
       <Route path="/" exact>
+        <Inicio/>
+      </Route>   
+      <Route path="/Store">
         <ItemListContainer/>
       </Route>
       <Route path="/Categoria/:id">

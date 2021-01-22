@@ -5,7 +5,7 @@ import "./NavBar.css"
 
 const NavBar = () =>{
 return(
-  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <nav class="navbar navbar-expand-md bg-light navbar-light">
     <NavLink to = "/" exact>
     <a class="navbar-brand" href="#">Grusli</a>
     </NavLink>
@@ -14,28 +14,26 @@ return(
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
-        <NavLink to = "/">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Inicio</a>
-        </li>
-        </NavLink>
-        <NavLink to = "/">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Tienda</a>
-        </li>
+       
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Productos
+        </a>
+        <div class="dropdown-menu">
+        <NavLink to = "/Store">
+        <a class="dropdown-item" href="#">Todos</a>
         </NavLink>
         <NavLink to ="/Categoria/1">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Almacen</a>
-        </li>
+          <a class="dropdown-item" href="#">Almacen</a>
         </NavLink>
         <NavLink to ="/Categoria/2">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Bebidas</a>
-        </li>
+          <a class="dropdown-item" href="#">Bebidas</a>
         </NavLink>  
+               
+        </div>
+        </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contactanos</a>
+          <a class="nav-link" href="#">Sobre Nosotros</a>
         </li>       
       </ul>   
     </div>

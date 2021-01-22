@@ -8,8 +8,10 @@ const CartWidget = () =>{
   const {productsCount} = useContext(CartContext)
   return(
     <>
+      <div className="d-flex"> 
       <FiShoppingCart className='iconCart'></FiShoppingCart>
       <p>{productsCount()}</p>
+      </div>
     </>  
   )
     

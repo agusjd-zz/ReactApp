@@ -14,7 +14,13 @@ return(
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
-       
+      <form>
+        <input placeholder="Que estas buscando?">
+        </input>
+      </form> 
+      <li class="nav-item">
+          <a class="nav-link" href="#">Sobre Nosotros</a>
+        </li>    
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
         Productos
@@ -32,10 +38,9 @@ return(
                
         </div>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Sobre Nosotros</a>
-        </li>       
-      </ul>   
+         
+      </ul>
+    
     </div>
     <NavLink to="/Carrito">
     <CartWidget/>

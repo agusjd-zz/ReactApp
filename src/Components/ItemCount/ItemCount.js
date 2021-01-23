@@ -52,8 +52,8 @@ const ItemCount = (props)=>{
         <IoMdAddCircleOutline onClick ={countAdd}></IoMdAddCircleOutline>    
         </div>
         { showing
-    ? <NavLink to="/Carrito"><button >Terminar Compra</button></NavLink>
-    : <button onClick={addToCart}>Agregar al Carrito {count}</button>
+    ? <NavLink to="/Carrito"><button className="btn btn-color" >Terminar Compra</button></NavLink>
+    : <button onClick={addToCart} className="btn btn-color">Agregar al Carrito {count}</button>
     }
 
         </>

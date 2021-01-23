@@ -8,15 +8,15 @@ const products = [{
     title : "Miel",
     category : "1",
     img : "http://beepure.com.ar/assets/img/beepureliquida.png",
-    brand : "Finca Carolina",
+    details : "Finca Carolina",
     price : 180
 },
 {
     id : 1,
     category: "1",
-    title : "Cacao",
+    title : "Cacao en polvo",
     img : "https://www.drcacao.com/images/producto-8.png",
-    brand : "Dr Cacao",
+    details : "Dr Cacao",
     price : 240
 },
 {
@@ -24,7 +24,7 @@ const products = [{
     category: "1",
     title : "Ghee",
     img : "http://beepure.com.ar/assets/img/beepureliquida.png",
-    brand : "Bee Pure",
+    details : "Bee Pure",
     price : 400
 },
 {
@@ -32,7 +32,7 @@ const products = [{
     category: "1",
     title : "Mantequilla de mani",
     img : "http://www.le-fit.com.ar/wp-content/uploads/2019/03/le-fit_mantequilla_de_mani.png",
-    brand : "Le Fit",
+    details : "Le Fit",
     price : 220
 },
 {
@@ -40,7 +40,7 @@ const products = [{
     category: "2",
     title : "Leche de almendras",
     img : "https://almacensantosha.com.ar/wp-content/uploads/2019/05/Pack_Original.png",
-    brand : "Vrink",
+    details : "Vrink",
     price : 160
 },
 {
@@ -48,7 +48,7 @@ const products = [{
     category: "1",
     title : "Cacao en barra",
     img : "https://www.drcacao.com/images/producto-4.png",
-    brand : "Dr Cacao",
+    details : "Dr Cacao",
     price : 280
 },
 {
@@ -56,7 +56,7 @@ const products = [{
     category: "1",
     title : "Aceite de coco",
     img : "https://http2.mlstatic.com/D_NQ_NP_2X_643017-MLA27861220141_072018-F.webp",
-    brand : "Dale coco",
+    details : "Dale coco",
     price : 800
 },
 {
@@ -64,14 +64,14 @@ const products = [{
     category: "1",
     title : "Mermelada",
     img : "http://beepure.com.ar/assets/img/productos/BEEPURE_Dulce-FdB.jpg",
-    brand : "Bee Pure",
+    details : "Bee Pure",
     price : 400
 },{
     id : 8,
     category: "2",
     title : "Leche de coco",
     img : "https://www.ifeelgood.com.ar/img/articulos/bebida_vegetal_de_coco_dale_coco_1_lt_sin_lactosa_1_imagen1.jpg",
-    brand : "Dale coco",
+    details : "Dale coco",
     price : 250
 }]
 const ItemListContainer = () =>{

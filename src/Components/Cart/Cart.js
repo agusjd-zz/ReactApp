@@ -52,7 +52,7 @@ function Cart() {
             <p>${getGrandTotal()}</p>
             </div>
         </div>
-        <NavLink to="/">
+        <NavLink to="/Store">
         <button>Volver</button>
         </NavLink>   
         <button onClick={clearCart}>Borrar todo</button>

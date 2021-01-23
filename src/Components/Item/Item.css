@@ -1,0 +1,28 @@
+.img-product{
+    width: 200px;
+    margin-left:1.25rem;
+}
+.card-title{
+    font-size:1.5rem;
+    color:#3A3A3A;
+    line-height: 120%;
+}
+.card-text{
+    font-size:1rem;
+    color:#898989;
+    line-height: 150%;
+}
+.card-footer{
+    border-radius: 23px !important;
+    border-color: #F4F5F7;
+}
+
+.item-price{
+    font-size:1.25rem;
+}
+
+.icon-product{
+    font-size:1.6rem;
+    padding-top:3px;
+    color:#067B5F;
+}

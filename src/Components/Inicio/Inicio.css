@@ -1,5 +1,17 @@
 .inicio{
     background-image: url("https://i.ibb.co/D7r09Pz/index.jpg");
     background-size: cover;
-    padding-bottom: 60rem;
+    padding: 60rem;
+}
+
+.index-text{
+    color:#4F5665;
+    font-size: 4.375rem;
+    line-height: 5.188rem;
+    position: absolute;
+    width: 34.18rem;
+    height: 17.188rem;
+    left: 6.938rem;
+    top: 14.813rem;      
+
 }

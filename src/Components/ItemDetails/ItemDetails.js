@@ -1,7 +1,9 @@
 import React from 'react'
 import ItemCount from '../ItemCount/ItemCount'
 import "./ItemDetails.css";
+// import CartContext from '../../Context/CartContext'
 const ItemDetails = ({item}) => {
+    // const {addProduct} = React.useContext(CartContext);
     
     return(
         <>

@@ -1,33 +1,33 @@
 import React,{useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import ItemDetails from "../ItemDetails/ItemDetails"
-import ProductContext from "../../Context/ProductContext"
-// import {getFirestore} from "../../firebase";
+import {productDetails} from "../Item/products"
+// import ProductContext from "../../Context/ProductContext"
+import {getFirestore} from "../../firebase";
 
 
 
 const ItemDetailsContainer = () => {
-    const product = React.useContext(ProductContext)
+    const product = productDetails
     const [item,setItem] = useState()
     const {id} = useParams() 
     
-    // useEffect(()=>{
+    // useEffect(() => {
+    //     const db = getFirestore()
+    //     const itemsColecction = db.collection("items")
 
-    //     const db = getFirestore();
-    //     const itemsCollection = db.collection("Items")
-    //     const query = itemsCollection.get()
-  
-    //     query
-    //     .then((res)=>{
-    //       res.docs.forEach(doc => {
-    //         console.log(doc.data())
-            
-    //       });
-    //     })
-    //     .catch((err)=>{
-    //       console.log(err)
-    //     })
-    //   })
+    //     itemsColecction.doc(id).get()
+        
+    //         .then(doc => {
+    //             if(doc.exists) {
+    //                 setItem(doc.data());
+    //             }
+    //         })
+    //         .catch((err) => {
+    //             console.log(err)
+    //         })
+
+    // }, []);
 
 
 

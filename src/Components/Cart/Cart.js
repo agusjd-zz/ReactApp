@@ -51,6 +51,9 @@ function Cart() {
             <p>Total Compra:</p>
             <p>${getGrandTotal()}</p>
             </div>
+            <div>
+                <button>Finalizar Compra</button>
+            </div>
         </div>
         <NavLink to="/Store">
         <button>Volver</button>

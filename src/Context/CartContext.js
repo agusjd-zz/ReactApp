@@ -1,48 +1,48 @@
-import React, {createContext, useState} from 'react';
+import {useContext, createContext, useState} from 'react';
 
-const CartContext = createContext();
+export const CartContext = createContext();
+export const useCartContext = () => useContext(CartContext)
 
 function CartContextProvider({children}){
-    const [products, setProducts] = useState([]);
+    const [cart, setCart] = useState([]);
+    const [totalQty, setTotalQty] = useState(0);
+    const [totalPrice, setTotalPrice] = useState(0);
 
-    const addProduct = (datos, number) => {
-    
-    const existing = products.find((p) => p.id === datos.id);
-
-    if (existing) {
-        existing.number += number;
+    const addToCart = (item, qty) => {
+        const repeated = cart.findIndex(product => product.item.id === item.item.id);
+        
+        setTotalQty(totalQty + qty);
+        
+        if(repeated !== -1) {
+            const newArray = Array.from(cart);
+            cart[repeated].cantidad += item.cantidad;
+            setCart(newArray); 
         } else {
-        setProducts([...products, { ...datos, number }]);    
+            setCart([...cart, item]);
+            setTotalPrice(totalPrice + (item.item.price * item.cantidad))
         }
-    };
-
-    const delProduct = (id) => {
-        products.splice(
-        products.findIndex((p) => p.id === id),
-        1
-        );
-        setProducts([...products]);
-    };
-
-    const clearCart = () => {
-        setProducts([]);
     }
 
-    const productsCount = () => {
-        return products.reduce((total, p) => (total += p.number), 0);
-    };
-    
-    const getGrandTotal = () => {
-        return products.reduce((total , p) => (total += p.price * p.number), 0);
-    };
+    const removeItem = (id, price, qty) => {
+        const arrayAfterDelete = cart.filter(product => product.item.id !== id);
+
+        setCart(arrayAfterDelete);
+        setTotalPrice(totalPrice - price);
+        setTotalQty(totalQty - qty);
+    }
+
+    const clearCart = () => {
+        setCart([]);
+        setTotalQty(0)
+    }
 
     return(
-        <CartContext.Provider value={{ products, addProduct, delProduct, clearCart, productsCount, getGrandTotal  }}>
+        <CartContext.Provider value={{ cart, totalQty, totalPrice,addToCart, removeItem, clearCart }}>
             {children}
         </CartContext.Provider>
     )
 
 }
 
-export default CartContext;
-export {CartContextProvider};
+
+export default CartContextProvider;

@@ -1,12 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import NavBar from './Components/Navbar/NavBar'
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 import ItemDetailsContainer from "./Components/ItemDetailsContainer/ItemDetailsContainer";
 import Cart from './Components/Cart/Cart'
-import {ProductContextProvider} from './Context/ProductContext'
-import {CartContextProvider} from './Context/CartContext'
+import CartContextProvider from './Context/CartContext'
 import Inicio from "./Components/Inicio/Inicio";
 
 
@@ -15,7 +14,7 @@ const App = () =>{
   return(
     <>  
     <Router>
-    <ProductContextProvider>
+
     <CartContextProvider>
     <NavBar/>
     <Switch>
@@ -36,7 +35,7 @@ const App = () =>{
       </Route>
       </Switch>
       </CartContextProvider>
-      </ProductContextProvider>        
+       
     </Router>
     </>
   )

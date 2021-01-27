@@ -1,11 +1,11 @@
 import React,{useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
 import ItemList from '../ItemList/ItemList';
-import {getFirestore} from "../../firebase"
-import ProductContext from "../../Context/ProductContext"
+// import {getFirestore} from "../../firebase"
+import {productDetails} from "../../Components/Item/products"
 
 const ItemListContainer = () =>{
-    const product = React.useContext(ProductContext)
+    const product = productDetails
     const [items,setItems] = useState([])
     const {id} = useParams()
 

@@ -3,24 +3,14 @@ import './ItemCount.css';
 import { IoMdAddCircleOutline } from "react-icons/io";
 import { IoIosRemoveCircleOutline } from "react-icons/io";
 import {NavLink} from 'react-router-dom';
-import CartContext from '../../Context/CartContext'
 
 
-const ItemCount = (props)=>{
-    const initial = 1;
-    const[count,setCount] = React.useState(initial);
-    const stock = props.stock;
-    const idProduct = props.id;
-    const price = props.price;
-    const title = props.title;
-    const img = props.img;
-    const [showing, setShowing] = React.useState(false);
 
-    const {addProduct} = React.useContext(CartContext);
-    const datos = {idProduct, price, title,img} 
-
+const ItemCount = ({ stock, initial, onAdd })=>{
     
-
+    const[count,setCount] = React.useState(initial);
+    
+    const [showing, setShowing] = React.useState(false);
 
 
     const countAdd = () =>{
@@ -36,13 +26,6 @@ const ItemCount = (props)=>{
     
     }
     
-    const addToCart = () =>{
-        setShowing({ showing: !showing });
-        console.log(`Se agregaron ${count} elementos al carrito ${idProduct}`)
-        addProduct(datos, count);
-
-
-    }
 
     return(
         <>
@@ -53,7 +36,7 @@ const ItemCount = (props)=>{
         </div>
         { showing
     ? <NavLink to="/Carrito"><button className="btn btn-color" >Terminar Compra</button></NavLink>
-    : <button onClick={addToCart} className="btn btn-color">Agregar al Carrito {count}</button>
+    : <button onClick={(e) => onAdd(e, count)} className="btn btn-color">Agregar al Carrito {count}</button>
     }
 
         </>

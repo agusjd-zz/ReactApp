@@ -1,67 +1,59 @@
 import React, {useContext} from 'react';
-import CartContext from '../../Context/CartContext'
+import {useCartContext} from "../../Context/CartContext"
 import {NavLink} from 'react-router-dom'
+import "./Cart.css"
 
 function Cart() {
     
-    const {products,delProduct, clearCart, getGrandTotal, productsCount} = useContext(CartContext);
+    const {cart, totalPrice, removeItem, clearCart} = useCartContext();
 
-    const handleDel = (p) => {
-        delProduct(p.id);
-    };
-    return(
-        <>
-        <div className="container">
-        <h2>Carrito de compras</h2>
+    return (
         <div>
-        {products.length === 0 ?
-            (
-                <>
-                <p>Tu carrito está vacío!!</p>
-                </>
-                )
-            :products.map((product) => {
-                return(
-                    <>
+            <h1>Carrito</h1>
+            {
+                cart.length > 0 ?
+                <div>
+                    {cart.map((product, index) => {
+                        return (
+                            <>
+                            <div className="row">
+                            <p className="col-xl-2">Producto</p>
+                            <p className="col-xl-2">Cantidad</p>
+                            <p className="col-xl-2">Precio por unidad</p>
+                            <p className="col-xl-2">Precio total</p>
+                            </div> 
+                            <div key={index} className="row">
+                                <img src={product.item.img} className="img-cart"></img>
+                                <p className="col-xl-2"><strong>{product.item.title}</strong></p>
+                                <p className="col-xl-2">{product.cantidad}</p>
+                                <p className="col-xl-2">AR${product.item.price}</p>
+                                <p className="col-xl-2">AR${product.item.price * product.cantidad}</p>
+                                <button onClick={() => removeItem(product.item.id, product.item.price * product.cantidad, product.cantidad)}>X</button>
+                            </div>
+                            </>
+                        )
+                    })}
                     <div className="row">
-                        <p className="col-xl-2">Producto</p>
-                        <p className="col-xl-2">Cantidad</p>
-                        <p className="col-xl-2">Precio por unidad</p>
-                        <p className="col-xl-2">Precio total</p>
-                    </div> 
-                    <div className="row" key={product.id}>
-                        <img src={product.img}></img>
-                        <p className="col-xl-2">{product.title}</p>
-                        <p className="col-xl-2">{product.number}</p>
-                        <p className="col-xl-2">AR${product.price}</p>
-                        <p className="col-xl-2">{(product.price * product.number)}</p>   
-                        <button onClick={() => handleDel(product)}>X</button>
+                    <div className="col-xl-4">
+                        <p>Total Compra:</p>
+                        <p>${totalPrice}</p>
                     </div>
-                    </>
-                    
-                )
-            })
+                    <div className="col-xl-4">
+                    {cart.length > 0 && <button className="btn btn-success" onClick={clearCart}>Vaciar carrito</button>}
+                    </div>
+                    <div>
+                        <button className="btn btn-success">Finalizar Compra</button>
+                    </div>
+                    </div>
+                </div> :
+                <>
+                    <div className="carritoVacioMensaje">
+                        <p>El carrito está vacío</p>
+                       Volver al inicio
+                    </div>
+                </>
             }
-        <div className="row">
-            <div className="col-xl-4">
-            <p>Cantidad de Productos:</p>
-            <p>{productsCount()}</p>
-            </div>
-            <div className="col-xl-4">
-            <p>Total Compra:</p>
-            <p>${getGrandTotal()}</p>
-            </div>
-            <div>
-                <button>Finalizar Compra</button>
-            </div>
         </div>
-        <NavLink to="/Store">
-        <button>Volver</button>
-        </NavLink>   
-        <button onClick={clearCart}>Borrar todo</button>
-        </div>
-        </div>
-        </>
     )
 }
 

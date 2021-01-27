@@ -1,9 +1,21 @@
 import React from 'react'
 import ItemCount from '../ItemCount/ItemCount'
 import "./ItemDetails.css";
-// import CartContext from '../../Context/CartContext'
+import {useCartContext} from "../../Context/CartContext";
+
 const ItemDetails = ({item}) => {
-    // const {addProduct} = React.useContext(CartContext);
+    const {addToCart} = useCartContext();
+    const handleAddProduct = (e, qty) => {
+        e.stopPropagation();
+
+        addToCart({
+            cantidad: qty,
+            item,
+        }, qty)
+
+        
+    }
+
     
     return(
         <>
@@ -12,7 +24,7 @@ const ItemDetails = ({item}) => {
                         <h2 className="item-title">{item.title}</h2>
                         <p className="item-text">{item.details}</p>             
                         <p className="item-price">AR${item.price}</p>
-                        <ItemCount stock = {10} id ={item.id} price={item.price} title ={item.title} img={item.img}> </ItemCount>
+                        <ItemCount stock = {10} initial={1} onAdd={handleAddProduct}> </ItemCount>
                 </div>
         </>
     )

@@ -34,6 +34,7 @@ function CartContextProvider({children}){
     const clearCart = () => {
         setCart([]);
         setTotalQty(0)
+        setTotalPrice(0)
     }
 
     return(

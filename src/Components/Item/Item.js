@@ -2,9 +2,10 @@ import React from 'react'
 import {NavLink} from 'react-router-dom'
 import { FiShoppingCart } from "react-icons/fi";
 import "./Item.css"
-import ItemCount from '../ItemCount/ItemCount';
+
 
 const Item = ({id,title,price,img,details}) => {
+    
     return (
         <>
 
@@ -20,7 +21,6 @@ const Item = ({id,title,price,img,details}) => {
         <NavLink to ={`/DetalleProducto/${id}`}>
         <FiShoppingCart className='icon-product'></FiShoppingCart>
         </NavLink>
-
         </div> 
         </div>
     </div>

@@ -34,10 +34,8 @@ const ItemCount = ({ stock, initial, onAdd })=>{
             <p>{count}</p>
         <IoMdAddCircleOutline onClick ={countAdd}></IoMdAddCircleOutline>    
         </div>
-        { showing
-    ? <NavLink to="/Carrito"><button className="btn btn-color" >Terminar Compra</button></NavLink>
-    : <button onClick={(e) => onAdd(e, count)} className="btn btn-color">Agregar al Carrito {count}</button>
-    }
+   <button onClick={(e) => onAdd(e, count)} className="btn btn-color">Agregar al Carrito {count}</button>
+    
 
         </>
     

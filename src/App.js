@@ -7,25 +7,26 @@ import ItemDetailsContainer from "./Components/ItemDetailsContainer/ItemDetailsC
 import Cart from './Components/Cart/Cart'
 import CartContextProvider from './Context/CartContext'
 import Inicio from "./Components/Inicio/Inicio";
+import Categorias from "./Components/Category/Category";
+import Checkout from "./Components/Checkout/Checkout";
 
 
 const App = () =>{  
 
   return(
-    <>  
+    <>
+    <CartContextProvider>  
     <Router>
-
-    <CartContextProvider>
     <NavBar/>
     <Switch>
       <Route path="/" exact>
         <Inicio/>
       </Route>   
       <Route path="/Store">
-        <ItemListContainer/>
+        <ItemListContainer />
       </Route>
-      <Route path="/Categoria/:id">
-        <ItemListContainer/>
+      <Route path="/Category/:id">
+        <Categorias/>
       </Route>
       <Route path="/DetalleProducto/:id">
         <ItemDetailsContainer/>
@@ -33,10 +34,14 @@ const App = () =>{
       <Route path="/Carrito">
         <Cart/>
       </Route>
+      <Route path="/Checkout">
+        <Checkout/>
+      </Route>
       </Switch>
-      </CartContextProvider>
+     
        
     </Router>
+    </CartContextProvider>
     </>
   )
 }

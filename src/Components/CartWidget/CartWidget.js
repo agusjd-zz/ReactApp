@@ -11,7 +11,7 @@ const CartWidget = () =>{
     <>
       <div className="d-flex"> 
       <FiShoppingCart className='iconCart'></FiShoppingCart>
-      <p>{totalQty}</p>
+      <span className="badge rounded-pill bg-light text-dark">{totalQty}</span>
       </div>
     </>  
   )

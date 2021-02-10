@@ -1,51 +1,56 @@
 import React,{useEffect, useState} from 'react';
-import { useParams } from 'react-router-dom';
 import ItemList from '../ItemList/ItemList';
-// import {getFirestore} from "../../firebase"
-import {productDetails} from "../../Components/Item/products"
+import {getFirestore} from "../../firebase"
+import {useParams} from "react-router-dom";
+
 
 const ItemListContainer = () =>{
-    const product = productDetails
+
     const [items,setItems] = useState([])
-    const {id} = useParams()
-
-    // useEffect(()=>{
-
-    //     const db = getFirestore();
-    //     const itemsCollection = db.collection("Items")
-
-    //     itemsCollection.get("category", "==", 1)
-        
-        
-    //         .then(docs => {
-    //             let arr = [];
-    //             docs.forEach(doc => {
-    //                 arr.push({id:doc.id, data:doc.data()})
-    //             })
-    //             console.log(arr)
-    //             setItems(arr);
-    //         })
-    //         .catch((err) => {
-    //             console.log(err)
-    //         })
-    //   },[])
-
+    const db = getFirestore();
+    const{id} = useParams();
     useEffect(()=>{
+        if(id){
+            console.log(id)
+            db.collection("Items")
+            .get()
+            .then(docs=>{
+                let array = [];
+                docs.forEach(doc=>{
+                    let iditem = doc.data().idcategory;
+                    if (iditem == id) {
+                        array.push({id:doc.id,data:doc.data()})               
+                    }  
+                })
+                setItems(array); 
+                
+            })
+            .catch((error)=>{
+                console.log(error)
+            })
 
-        let promise = new Promise((resolve,reject)=>{
-            setTimeout(()=>{
-                resolve(product)
-            },1000)
-        })
+        }else{
 
-        promise.then(resolve=>{
-            if(id){
-                setItems(resolve.filter(item=>item.category===id))
-            }else{
-                setItems(resolve)
-            }
-        })
-        },[id])
+            db.collection("Items")
+            .get()
+            .then(docs =>{
+                let array = [];
+                docs.forEach(doc=>{
+                    array.push({id:doc.id,data:doc.data()})
+                    
+                })
+
+                setItems(array);
+                
+            })
+            .catch((error)=>{
+                console.log(error)
+            })
+
+        }
+    },[])
+
+
         return(
             <div className="container">
         

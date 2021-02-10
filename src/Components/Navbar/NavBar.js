@@ -13,11 +13,7 @@ return(
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav">
-      <form>
-        <input placeholder="Que estas buscando?">
-        </input>
-      </form> 
+      <ul class="navbar-nav"> 
       <li class="nav-item">
           <a class="nav-link" href="#">Sobre Nosotros</a>
         </li>    
@@ -29,10 +25,10 @@ return(
         <NavLink to = "/Store">
         <a class="dropdown-item" href="#">Todos</a>
         </NavLink>
-        <NavLink to ="/Categoria/1">
+        <NavLink to ="/Category/1">
           <a class="dropdown-item" href="#">Almacen</a>
         </NavLink>
-        <NavLink to ="/Categoria/2">
+        <NavLink to ="/Category/2">
           <a class="dropdown-item" href="#">Bebidas</a>
         </NavLink>  
                

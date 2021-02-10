@@ -9,7 +9,7 @@ const ItemList = ({items}) =>{
             {
                 items.length >0 ? items.map (item=>{
                     return(
-                        <Item key = {item.id} id = {item.id} details= {item.details} title={item.title} price={item.price} img = {item.img}/>
+                        <Item key = {item.category} category= {item.data.idcategory} id = {item.id} details= {item.data.details} title={item.data.title} price={item.data.price} img = {item.data.img}/>
                     )
                 }):<p>Cargando...</p>
             }

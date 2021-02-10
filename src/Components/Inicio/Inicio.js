@@ -8,6 +8,7 @@ const Inicio = () => {
                 <h2 className="index-text">
                     Conoce nuestra variedad de productos
                 </h2>
+                <button className="btn btn-success">A comprar!</button>
             
         </div>
     )

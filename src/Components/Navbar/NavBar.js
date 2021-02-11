@@ -2,12 +2,13 @@ import React from "react";
 import CartWidget from '../CartWidget/CartWidget';
 import {NavLink} from 'react-router-dom'
 import "./NavBar.css"
+import Grusli from "./Grusli.png"
 
 const NavBar = () =>{
 return(
   <nav class="navbar navbar-expand-md bg-light navbar-light">
     <NavLink to = "/" exact>
-    <a class="navbar-brand" href="#">Grusli</a>
+    <img src={Grusli} className="logo-navbar"></img>
     </NavLink>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>

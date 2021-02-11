@@ -29,7 +29,7 @@ const ItemDetails = ({item}) => {
                         <p className="item-text">{item.details}</p>             
                         <p className="item-price">AR${item.price}</p>
                         {show && <ItemCount stock = {10} initial={1} onAdd={handleAddProduct}> </ItemCount>}
-                        {!show && <NavLink to="/Carrito"><button className="btn btn-success">Finalizar Compra</button></NavLink>}
+                        {!show && <NavLink to="/Cart"><button className="btn btn-success">Finalizar Compra</button></NavLink>}
                 </div>
         </>
     )

@@ -1,17 +1,23 @@
 .inicio{
-    background-image: url("https://i.ibb.co/D7r09Pz/index.jpg");
+    background-image: url("./Home.jpg");
     background-size: cover;
-    padding: 60rem;
+    padding-bottom: 20rem;
 }
 
 .index-text{
     color:#4F5665;
     font-size: 4.375rem;
     line-height: 5.188rem;
-    position: absolute;
+    padding-top: 10rem;
     width: 34.18rem;
-    height: 17.188rem;
-    left: 6.938rem;
-    top: 14.813rem;      
-
+    
+}
+.btn-home{
+    margin-top: 4rem;
+    background-color: #067B5F;
+    color:white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 168px;
+    transform: rotate(0.53deg);
+    width:10rem;
 }

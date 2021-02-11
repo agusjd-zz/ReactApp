@@ -1,5 +1,6 @@
 import React from 'react'
 import "./Inicio.css"
+import {NavLink} from "react-router-dom"
 
 const Inicio = () => {
     return (
@@ -8,7 +9,9 @@ const Inicio = () => {
                 <h2 className="index-text">
                     Conoce nuestra variedad de productos
                 </h2>
-                <button className="btn btn-success">A comprar!</button>
+                <NavLink to = "/Store">
+                <button className="btn btn-success btn-home">A comprar!</button>
+                </NavLink>
             
         </div>
     )

@@ -28,10 +28,10 @@ const App = () =>{
       <Route path="/Category/:id">
         <Categorias/>
       </Route>
-      <Route path="/DetalleProducto/:id">
+      <Route path="/ProductDetail/:id">
         <ItemDetailsContainer/>
       </Route>
-      <Route path="/Carrito">
+      <Route path="/Cart">
         <Cart/>
       </Route>
       <Route path="/Checkout">

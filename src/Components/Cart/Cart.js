@@ -41,14 +41,14 @@ const Cart = ()=> {
                         <p>${totalPrice}</p>
                     </div>
                     <div className="col-xl-4">
-                    {cart.length > 0 && <button className="btn btn-success" onClick={clearCart}>Vaciar carrito</button>}
+                    {cart.length > 0 && <button className="btn btn-success btn-color" onClick={clearCart}>Vaciar carrito</button>}
                     </div>
                     <NavLink to="/Store">
-                        <button className="btn btn-success">Volver</button>
+                        <button className="btn btn-success btn-color">Volver</button>
                     </NavLink> 
                     <div>
                      <NavLink to="/Checkout">
-                        <button className="btn btn-success">Finalizar Compra</button>
+                        <button className="btn btn-success btn-color">Finalizar Compra</button>
                     </NavLink>  
                     </div>
                     </div>
@@ -57,7 +57,7 @@ const Cart = ()=> {
                     <div className="carritoVacioMensaje">
                         <p>El carrito está vacío</p>
                         <NavLink to="/Store">
-                        <button className="btn btn-success">Volver</button>
+                        <button className="btn btn-success btn-color" >Volver</button>
                         </NavLink> 
                     </div>
                 </>

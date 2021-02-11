@@ -39,7 +39,7 @@ return(
       </ul>
     
     </div>
-    <NavLink to="/Carrito">
+    <NavLink to="/Cart">
     <CartWidget/>
     </NavLink>   
   </nav>

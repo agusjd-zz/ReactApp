@@ -3,6 +3,7 @@ import { getFirestore } from "../../firebase";
 import { useCartContext } from "../../Context/CartContext";
 import firebase from "firebase/app";
 import "firebase/firestore";
+import "./Checkout.css"
 
 const Checkout = () => {
     const { totalPrice } = useCartContext()
@@ -44,7 +45,7 @@ const Checkout = () => {
             {
                 orderId ?
                     <>
-                        <section>
+                        <section className="container mt-5">
                             <h2>Compra realizada con exito!</h2>
                             <p>Tu numero de orden es: <strong>{orderId}</strong> </p>
 
@@ -53,7 +54,7 @@ const Checkout = () => {
 
                     :
                     <section>
-                        <div>
+                        <div className="container m-auto">
                             <h1>Checkout</h1>
 
                             <form onSubmit={manejarCompra} >
@@ -69,7 +70,7 @@ const Checkout = () => {
                                     <p>Correo Electrónico:</p>
                                     <input value={email} onChange={(e) => { setEmail(e.target.value) }} type="email" required/>
                                 </div>
-                                <button type="submit">Comprar</button>
+                                <button type="submit" className="btn btn-success btn-color">Comprar</button>
                             </form>
                         </div>
                     </section>

@@ -1,6 +1,3 @@
-.img-cart{
-    width: 100px;
-}
 .btn-color{
     background-color: #067B5F;
     color:white;
@@ -8,4 +5,5 @@
     border-radius: 168px;
     transform: rotate(0.53deg);
     line-height: 150%;
+    margin-top: 2rem;
 }

@@ -12,7 +12,7 @@ const ItemListContainer = () =>{
     useEffect(()=>{
         if(id){
             console.log(id)
-            db.collection("Items")
+            db.collection("items")
             .get()
             .then(docs=>{
                 let array = [];
@@ -31,7 +31,7 @@ const ItemListContainer = () =>{
 
         }else{
 
-            db.collection("Items")
+            db.collection("items")
             .get()
             .then(docs =>{
                 let array = [];

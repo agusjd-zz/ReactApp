@@ -7,13 +7,13 @@ import "firebase/auth";
 import "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAiGCdO-ABXSr48JTM62b2u97OHeDmz-aI",
-    authDomain: "grusliapp.firebaseapp.com",
-    projectId: "grusliapp",
-    storageBucket: "grusliapp.appspot.com",
-    messagingSenderId: "737224983578",
-    appId: "1:737224983578:web:43248c1b57b468a40e3da3",
-    measurementId: "G-MZWP2RNWET"
+  apiKey: "AIzaSyDxIav85R25M-D2cyucNUEXvGth-EmuZN8",
+  authDomain: "gruslidiet.firebaseapp.com",
+  projectId: "gruslidiet",
+  storageBucket: "gruslidiet.appspot.com",
+  messagingSenderId: "442623935122",
+  appId: "1:442623935122:web:8dd6c48774363e8f7a9c4b",
+  measurementId: "G-CPDLK934N5"
   };
 
 const app = firebase.initializeApp(firebaseConfig);
